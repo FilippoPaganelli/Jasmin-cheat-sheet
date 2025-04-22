@@ -163,6 +163,31 @@
           <span class="combo-tag">editor</span> Save current file
         </div>
       </div>
+
+      <div class="combo" onclick="copyToClipboard(event)">
+        <div class="keys">
+          <span class="key">Ctrl</span>
+          +
+          <span class="key">Shift</span>
+          +
+          <span class="key">S</span>
+        </div>
+        <div class="description">
+          <span class="combo-tag">editor</span> Save current file with a
+          specific name
+        </div>
+      </div>
+
+      <div class="combo" onclick="copyToClipboard(event)">
+        <div class="keys">
+          <span class="key">Ctrl</span>
+          +
+          <span class="key">B</span>
+        </div>
+        <div class="description">
+          <span class="combo-tag">vscode</span> Open/close the menu on the left
+        </div>
+      </div>
     </div>
 
     <!-- svg for the Windows OS badge -->
@@ -256,13 +281,31 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       margin: 20px;
-      background-color: rgb(205, 192, 218);
       font-size: 175%;
       font-family: monospace;
+      background-color: rgb(205, 192, 218);
+      position: relative;
+      min-height: 100vh;
+      margin: 20px;
+      overflow-x: hidden;
     }
+
+    body::before {
+      background-image: url("assets/phages.png");
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: -1;
+    }
+
     .welcome {
       color: white;
-      background-color: #e32ba9df;
+      background-color: #e32ba9;
       font-weight: bold;
       border-radius: 8px;
       padding-top: 20px;
@@ -285,18 +328,18 @@
       gap: 10px;
       align-items: center;
       column-gap: 50px;
-      grid-template-columns: 3fr 5fr 1fr;
+      grid-template-columns: 3fr 6fr 1fr;
       padding: 10px;
       border: 1px solid rgba(76, 23, 126, 0.2);
       border-radius: 8px;
-      background-color: rgba(255, 255, 255, 0.3);
+      background-color: rgba(255, 255, 255, 0.504);
       transition: background-color 0.4s ease, color 0.4s ease,
         border-color 0.4s ease, color 0.4s ease, color 0.4s ease,
         color 0.4s ease;
     }
     .combo:hover {
-      background-color: #e32ba9df;
-      border-color: #e32ba9df;
+      background-color: #e32ba9;
+      border-color: #e32ba9;
       color: white;
     }
     .combo:hover .key {
